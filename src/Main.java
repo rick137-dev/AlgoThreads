@@ -51,7 +51,7 @@ public class Main {
 
         for(i=0;i<n;i++){
             for(j=0;j<n;j++) {
-                System.out.print(matrix2[i][j] + " ");
+               System.out.print(matrix2[i][j] + " ");
             }
             System.out.print("\n");
         }
@@ -63,7 +63,7 @@ public class Main {
         int column2 =0;
         int element =0;
 
-        int operationCounter = 0;
+       long operationCounter = 0;
        long startTime = System.nanoTime();
         for(row1=0;row1<n;row1++){
             for(column2=0;column2<n;column2++){
@@ -90,9 +90,9 @@ public class Main {
 
         for(i=0;i<n;i++){
             for(j=0;j<n;j++) {
-                System.out.print(finalMat[i][j] + " ");
+               System.out.print(finalMat[i][j] + " ");
             }
-            System.out.print("\n");
+           System.out.print("\n");
         }
 
         System.out.print("\n");
@@ -102,10 +102,13 @@ public class Main {
         System.out.print("The time for multiplication is: "+ totalTime*0.001 + " micro-seconds");
 
         System.out.print("\n");
+        System.out.print("\n");
+        System.out.print("\n");
         System.out.print("The multiplication with MultiThreading is:\n");
 
 
         ArrayList<RowMultiplicationThread> RowThreads = new ArrayList<>();
+
 
         for(i=0;i<n;i++){
             RowMultiplicationThread RowThread= new RowMultiplicationThread(i,matrix1,matrix2);
@@ -113,13 +116,33 @@ public class Main {
 
         }
 
-
+       long newStartTime = System.nanoTime();
         for(i=0;i<n;i++){
             RowThreads.get(i).start();
+
+
+        }
+        long newEndTime = System.nanoTime();
+
+
+        long newTotalTime = newEndTime-newStartTime;
+        System.out.print("\n");
+        System.out.print("\n");
+        System.out.print("\n");
+        System.out.print("\n");
+        System.out.print("The time taken is: " + newTotalTime*0.001+" micro-seconds");
+
+        long newOperationsCount=0;
+
+        for(i=0;i<n;i++){
+           newOperationsCount= newOperationsCount+ RowThreads.get(i).getOperationCount();
+
 
         }
 
 
+        System.out.print("\n");
+        System.out.print("The number of operations with Multithreadinng is: "+ newOperationsCount);
 
 
 

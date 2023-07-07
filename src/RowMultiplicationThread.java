@@ -40,7 +40,8 @@ public class RowMultiplicationThread extends Thread{
 
         }
 
-        System.out.println(Arrays.toString(resultVector));
+       System.out.println(Arrays.toString(resultVector));
+
     }
 
 
