@@ -1,5 +1,6 @@
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 
@@ -8,7 +9,7 @@ public class Main {
 
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
 
 
@@ -51,7 +52,7 @@ public class Main {
 
         for(i=0;i<n;i++){
             for(j=0;j<n;j++) {
-               System.out.print(matrix2[i][j] + " ");
+              System.out.print(matrix2[i][j] + " ");
             }
             System.out.print("\n");
         }
@@ -90,7 +91,7 @@ public class Main {
 
         for(i=0;i<n;i++){
             for(j=0;j<n;j++) {
-               System.out.print(finalMat[i][j] + " ");
+              System.out.print(finalMat[i][j] + " ");
             }
            System.out.print("\n");
         }
@@ -120,6 +121,9 @@ public class Main {
         for(i=0;i<n;i++){
             RowThreads.get(i).start();
 
+        }
+        for(i=0;i<n;i++){
+            RowThreads.get(i).join();
 
         }
         long newEndTime = System.nanoTime();
@@ -143,8 +147,6 @@ public class Main {
 
         System.out.print("\n");
         System.out.print("The number of operations with Multithreadinng is: "+ newOperationsCount);
-
-
 
 
 

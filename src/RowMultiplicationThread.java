@@ -39,8 +39,12 @@ public class RowMultiplicationThread extends Thread{
 
 
         }
+            String result = Arrays.toString(resultVector);
+        result = result.replace("["," ");
+        result = result.replace("]"," ");
+      result = result.replace(","," ");
 
-       System.out.println(Arrays.toString(resultVector));
+       System.out.println(result);
 
     }
 
