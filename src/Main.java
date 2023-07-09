@@ -20,14 +20,14 @@ public class Main {
 
 
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter size of arrays N\n");
+        System.out.println("Enter size of Matrices N\n");
 
         Integer N = Integer.parseInt(scanner.nextLine());
         int n = N.intValue();
         int i,j;
         int[][] matrix1 = new int[n][n];
         int[][] matrix2 = new int[n][n];
-        System.out.println("Creating arrays\n");
+        System.out.println("Creating Matrices\n");
 
 
 
@@ -38,7 +38,7 @@ public class Main {
                 matrix2[i][j] = (int) Math.floor(Math.random()*max);
             }
             }
-        System.out.println("Array 1 is:\n");
+        System.out.println("Matrix 1 is:\n");
         for(i=0;i<n;i++){
             for(j=0;j<n;j++) {
                System.out.print(matrix1[i][j] + " ");
@@ -47,7 +47,7 @@ public class Main {
         }
 
         System.out.print("\n");
-        System.out.println("Array 2 is:\n");
+        System.out.println("Matrix 2 is:\n");
         System.out.print("\n");
 
         for(i=0;i<n;i++){
